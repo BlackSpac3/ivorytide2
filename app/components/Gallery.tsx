@@ -5,7 +5,7 @@ import { QRCodeSVG } from "qrcode.react";
 import { Camera, UploadCloud } from "lucide-react";
 
 export default function Gallery() {
-  const albumLink = "https://www.apple.com/photos/album"; // Replace with actual Apple album link
+  const albumLink = "https://photos.app.goo.gl/Koo8umKYi19NT1xdA"; // Replace with actual Apple album link
   const qrCodeValue = albumLink;
 
   return (
@@ -53,7 +53,7 @@ export default function Gallery() {
               href={albumLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-body bg-gradient-gold text-white py-3 px-6 rounded-full font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
+              className="font-body bg-gradient-gold text-foreground py-3 px-6 rounded-full font-medium hover:shadow-lg hover:shadow-primary/30 transition-all duration-300">
               Visit Album
             </a>
           </div>

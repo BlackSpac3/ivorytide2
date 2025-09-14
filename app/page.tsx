@@ -1,6 +1,6 @@
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
-import WeddingDetails from "./components/WeddingDetails";
+// import WeddingDetails from "./components/WeddingDetails";
 import HoneymoonFund from "./components/HoneymoonFund";
 import Gallery from "./components/Gallery";
 import RSVP from "./components/RSVP";
@@ -13,9 +13,9 @@ export default function Home() {
       <section id="home" className="scroll-mt-10">
         <Hero />
       </section>
-      <section id="details" className="scroll-mt-10">
+      {/* <section id="details" className="scroll-mt-10">
         <WeddingDetails />
-      </section>
+      </section> */}
       <section id="fund" className="scroll-mt-10">
         <HoneymoonFund />
       </section>

@@ -25,7 +25,7 @@ export default function Footer() {
             <div className="flex flex-col items-center">
               <Calendar className="w-6 h-6 text-primary mb-3" />
               <h4 className="font-serif text-xl text-foreground mb-2">Date</h4>
-              <p className="text-text-muted font-body">October 15th, 2025</p>
+              <p className="text-text-muted font-body">November 22nd, 2025</p>
             </div>
 
             <div className="flex flex-col items-center">
@@ -71,7 +71,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="text-text-muted font-body text-sm">
-            <p>&copy; 2024 Amanda & Dayo. Made with love ❤️</p>
+            <p>&copy; 2025 Amanda & Dayo. Made with love ❤️</p>
           </div>
         </motion.div>
       </div>

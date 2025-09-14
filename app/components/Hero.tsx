@@ -66,10 +66,7 @@ export default function Hero() {
             transition={{ delay: 1.6, duration: 0.6 }}
             className="space-y-4">
             <div className="text-foreground font-serif text-3xl md:text-4xl">
-              October 15th, 2025
-            </div>
-            <div className="text-text-muted font-body text-lg">
-              Sunset Garden Estate, Napa Valley
+              November 22nd, 2025
             </div>
           </motion.div>
 

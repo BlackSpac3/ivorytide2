@@ -103,8 +103,9 @@ export default function RSVP() {
           </div>
           <button
             type="submit"
-            className="w-full bg-gradient-gold text-white py-4 rounded-lg font-body font-medium text-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 transform hover:scale-105">
-            Send RSVP <Send className="w-5 h-5 inline-block ml-2" />
+            className="w-full bg-gradient-gold text-foreground py-4 cursor-pointer rounded-lg font-body font-medium text-lg hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 transform hover:scale-105">
+            <Send className="w-4 h-auto inline-block mr-2" />
+            Send RSVP
           </button>
         </motion.form>
       </div>

@@ -20,10 +20,10 @@ export default function Navigation() {
 
   const navItems = [
     { name: "Home", href: "#home" },
-    { name: "Details", href: "#details" },
-    { name: "Honeymoon Fund", href: "#fund" },
-    { name: "Gallery", href: "#gallery" },
+    { name: "Registry", href: "#fund" },
+    // { name: "Registry", href: "#details" },
     { name: "RSVP", href: "#rsvp" },
+    { name: "Gallery", href: "#gallery" },
   ];
 
   const scrollToSection = (href: string) => {
