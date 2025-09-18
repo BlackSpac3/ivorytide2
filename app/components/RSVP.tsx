@@ -24,7 +24,7 @@ export default function RSVP() {
   };
 
   return (
-    <section id="rsvp" className="py-20 bg-accent/30 scroll-mt-10">
+    <section id="rsvp" className="py-20 bg-accent scroll-mt-10">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -32,7 +32,7 @@ export default function RSVP() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-16">
-          <h2 className="font-serif text-5xl md:text-6xl text-gradient mb-6">
+          <h2 className="font-serif text-5xl md:text-6xl text-primary mb-6">
             RSVP
           </h2>
           <div className="flex justify-center mb-8">

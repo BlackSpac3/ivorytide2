@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Heart, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import Logo from "./Logo";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,8 +48,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Heart className="w-6 h-6 text-primary fill-current" />
-            <span className="font-serif text-xl text-foreground">A & D</span>
+            <Logo />
           </div>
 
           {/* Desktop Navigation */}
@@ -57,7 +57,7 @@ export default function Navigation() {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="font-body text-foreground hover:text-primary transition-colors duration-200 relative group">
+                className="font-body text-text-muted hover:text-primary transition-colors duration-200 relative group">
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-200 group-hover:w-full"></span>
               </button>

@@ -19,10 +19,13 @@ export default function Home() {
       <section id="fund" className="scroll-mt-10">
         <HoneymoonFund />
       </section>
+      <section id="rsvp" className="scroll-mt-10">
+        <RSVP />
+      </section>
       <section id="gallery" className="scroll-mt-10">
         <Gallery />
       </section>
-      <RSVP />
+
       <Footer />
     </div>
   );

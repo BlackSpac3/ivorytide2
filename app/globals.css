@@ -4,9 +4,9 @@
 :root {
   --background: #faf9f7;
   --foreground: #2c2c2c;
-  --primary: #d4a574;
-  --secondary: #8b7355;
-  --accent: #f5f1eb;
+  --primary: #6f0d37;
+  --secondary: #f8eedc;
+  --accent: #f9f7f8;
   --text-muted: #6b6b6b;
 }
 
@@ -24,12 +24,12 @@
 }
 
 [data-theme="dark"] {
-  --background: #1a1a1a;
+  --background: #6f0d37;
   --foreground: #f0f0f0;
-  --primary: #d4a574;
+  --primary: #f5deb3;
   --secondary: #a08969;
-  --accent: #2a2a2a;
-  --text-muted: #9b9b9b;
+  --accent: #611234;
+  --text-muted: #c7a1a1;
 }
 
 body {

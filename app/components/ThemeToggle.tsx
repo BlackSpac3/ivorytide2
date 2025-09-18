@@ -17,12 +17,12 @@ const ThemeToggle = () => {
               stiffness: 420,
               damping: 30,
             }}
-            className="bg-accent rounded-full inset-0 absolute z-[-1]"></motion.span>
+            className="bg-primary/10 rounded-full inset-0 absolute z-[-1]"></motion.span>
         )}
         <button
           onClick={() => setTheme("light")}
-          className={`p-2 aspect-square rounded-full cursor-pointer hover:bg-accent/50 ${
-            resolvedTheme === "light" ? "text-primary" : "text-foreground"
+          className={`p-2 aspect-square rounded-full cursor-pointer hover:bg-primary/10 ${
+            resolvedTheme === "light" ? "text-primary" : "text-text-muted"
           } `}>
           <Sun className="size-4" />
         </button>
@@ -37,13 +37,13 @@ const ThemeToggle = () => {
               stiffness: 420,
               damping: 30,
             }}
-            className="bg-accent rounded-full inset-0 absolute z-[-1]"></motion.span>
+            className="bg-primary/20 rounded-full inset-0 absolute z-[-1]"></motion.span>
         )}
 
         <button
           onClick={() => setTheme("dark")}
-          className={`p-2 aspect-square rounded-full text-foreground cursor-pointer hover:bg-accent/80${
-            resolvedTheme === "dark" ? "text-primary" : "text-foreground"
+          className={`p-2 aspect-square rounded-full cursor-pointer hover:bg-primary/10 ${
+            resolvedTheme === "dark" ? "text-primary" : "text-text-muted"
           }`}>
           <Moon className="size-4" />
         </button>

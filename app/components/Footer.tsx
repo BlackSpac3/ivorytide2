@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, MapPin, Calendar, Mail } from "lucide-react";
+import { Heart, MapPin, Calendar, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary/10 py-16">
+    <footer className="bg-accent py-16">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -16,7 +16,9 @@ export default function Footer() {
           {/* Wedding Logo */}
           <div className="flex justify-center items-center space-x-3 mb-8">
             <Heart className="w-8 h-8 text-primary fill-current" />
-            <h3 className="font-serif text-3xl text-gradient">Amanda & Dayo</h3>
+            <h3 className="font-serif text-3xl text-primary">
+              Amanda & Ekundayo
+            </h3>
             <Heart className="w-8 h-8 text-primary fill-current" />
           </div>
 
@@ -32,19 +34,19 @@ export default function Footer() {
               <MapPin className="w-6 h-6 text-primary mb-3" />
               <h4 className="font-serif text-xl text-foreground mb-2">Venue</h4>
               <p className="text-text-muted font-body text-center">
-                Sunset Garden Estate
-                <br />
-                VI, Lagos
+                Jigi Wura Hall, 152/153 Awolowo Road, Radio Bus Stop, Ikorodu,
+                Lagos
               </p>
             </div>
 
             <div className="flex flex-col items-center">
-              <Mail className="w-6 h-6 text-primary mb-3" />
+              <Phone className="w-6 h-6 text-primary mb-3" />
               <h4 className="font-serif text-xl text-foreground mb-2">
                 Contact
               </h4>
               <p className="text-text-muted font-body">
-                wedding@amandaanddayo.com
+                <a href="tel:+2348027279837">+2348027279837</a>,{" "}
+                <a href="tel:+2349052936577">+2349052936577</a>
               </p>
             </div>
           </div>
@@ -71,7 +73,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="text-text-muted font-body text-sm">
-            <p>&copy; 2025 Amanda & Dayo. Made with love ❤️</p>
+            <p>&copy; 2025 Amanda & Ekundayo. Made with love ❤️</p>
           </div>
         </motion.div>
       </div>

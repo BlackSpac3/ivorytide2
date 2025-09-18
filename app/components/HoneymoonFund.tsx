@@ -114,7 +114,7 @@ const CashPaymentDetails = ({
         <p className="text-text-muted">GTB - 0128737878 - EKUNDAYO JACOBS</p>
       </div>
       <div className="space-y-2 text-text-muted">
-        <h4 className="text-primary font-medium">Euro Account</h4>
+        <h4 className="text-primary font-medium">USD Account</h4>
         <p>Account Name: Nkoyo Ebieme</p>
         <p>Account Number: 217829470607</p>
         <p>Wire Routing: 101019644</p>
@@ -124,7 +124,7 @@ const CashPaymentDetails = ({
         <p>Bank Address: 1801 Main St., Kansas City, MO 64108</p>
       </div>
       <div className="space-y-2 text-text-muted">
-        <h4 className="text-primary font-medium">USD Account</h4>
+        <h4 className="text-primary font-medium">Euro Account</h4>
         <p>Account Name: Nkoyo Ebieme</p>
         <p>Account Number: 65349447</p>
         <p>Swift Code: CLJUGB21XXX</p>
@@ -188,19 +188,19 @@ export default function HoneymoonFund() {
     {
       value: "cash",
       icon: Banknote,
-      title: "Pay with cash",
-      description: "Transfer directly to the details below",
+      title: "Gift with cash",
+      description: "Transfer directly to the detail below or pay with card",
     },
     {
       value: "bank",
-      icon: CreditCard,
-      title: "Pay with bank",
-      description: "Make payment through your bank",
+      icon: Gift,
+      title: "Gift registry",
+      description: "Pick a gift from our registry",
     },
   ];
 
   return (
-    <section className="py-20 bg-accent/30">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -208,7 +208,7 @@ export default function HoneymoonFund() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-16">
-          <h2 className="font-serif text-5xl md:text-6xl text-gradient mb-6">
+          <h2 className="font-serif text-5xl md:text-6xl text-primary mb-6">
             Gift Couple
           </h2>
           <div className="flex justify-center mb-8">

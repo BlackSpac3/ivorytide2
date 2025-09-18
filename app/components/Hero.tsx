@@ -46,8 +46,8 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="font-serif text-4xl md:text-8xl lg:text-9xl text-gradient mb-8 leading-tight">
-            Amanda &amp; Dayo
+            className="font-serif text-4xl md:text-8xl text-primary mb-8 leading-tight">
+            Amanda &amp; Ekundayo
           </motion.h1>
 
           {/* Subtitle */}

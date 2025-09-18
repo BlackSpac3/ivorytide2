@@ -1,12 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { QRCodeSVG } from "qrcode.react";
 import { Camera, UploadCloud } from "lucide-react";
+import QRCode from "./QRCode";
 
 export default function Gallery() {
-  const albumLink = "https://photos.app.goo.gl/Koo8umKYi19NT1xdA"; // Replace with actual Apple album link
-  const qrCodeValue = albumLink;
+  const albumLink = "https://photos.app.goo.gl/Koo8umKYi19NT1xdA";
 
   return (
     <section className="py-20 bg-background">
@@ -17,7 +16,7 @@ export default function Gallery() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-16">
-          <h2 className="font-serif text-5xl md:text-6xl text-gradient mb-6">
+          <h2 className="font-serif text-5xl md:text-6xl text-primary mb-6">
             Wedding Gallery
           </h2>
           <div className="flex justify-center mb-8">
@@ -41,14 +40,8 @@ export default function Gallery() {
           viewport={{ once: true }}
           className="flex flex-col md:flex-row items-center justify-center gap-12">
           {/* QR Code */}
-          <div className="bg-accent/50 p-8 rounded-lg shadow-lg border border-primary/10 flex flex-col items-center">
-            <QRCodeSVG
-              value={qrCodeValue}
-              size={160}
-              fgColor="#2c2c2c"
-              bgColor="#f5f1eb"
-              className="mb-4"
-            />
+          <div className="bg-accent p-8 rounded-lg shadow-lg border border-primary/10 flex flex-col items-center">
+            <QRCode />
             <a
               href={albumLink}
               target="_blank"
