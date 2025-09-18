@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
+import { APP_CONFIG } from "@/lib/data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,10 +14,41 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Amanda & Ekundayo | Wedding Invitation";
+const description =
+  "Join us for our special day - Amanda & Ekundayo's Wedding Celebration";
+
 export const metadata: Metadata = {
-  title: "Amanda & Dayo | Wedding Invitation",
-  description:
-    "Join us for our special day - Amanda & Dayo's Wedding Celebration",
+  metadataBase: new URL(APP_CONFIG.BASE_URL),
+  alternates: {
+    canonical: "/",
+  },
+
+  title: {
+    default: title,
+    template: "%s | Amanda & Ekundayo Wedding Invitation",
+  },
+  description,
+  openGraph: {
+    type: "website",
+    url: APP_CONFIG.BASE_URL,
+    title,
+    description,
+    images: [
+      {
+        url: "/opengraph-image.png", // absolute or relative path
+        width: 1200,
+        height: 630,
+        alt: title,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/opengraph-image.png"], // must be absolute URL in production
+  },
 };
 
 export default function RootLayout({
