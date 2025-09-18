@@ -11,7 +11,7 @@ const QRCode = () => {
     <QRCodeSVG
       value={qrCodeValue}
       size={160}
-      fgColor={resolvedTheme === "dark" ? "#f5deb3" : "#6f0d37"}
+      fgColor={resolvedTheme === "dark" ? "#f0f0f0" : "#2c2c2c"}
       bgColor={resolvedTheme === "dark" ? "#611234" : "#f9f7f8"}
       className="mb-4"
     />
