@@ -9,7 +9,7 @@ export const metadata = {
 const page = () => {
   return (
     <Suspense>
-      <GuestsPage />;
+      <GuestsPage />
     </Suspense>
   );
 };
