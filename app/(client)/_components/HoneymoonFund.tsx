@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Heart, Gift, Banknote, CreditCard, LucideProps } from "lucide-react";
-import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import BankPaymentForm from "./bank-payment-form";
 
@@ -81,7 +80,6 @@ const PaymentActionCard = () => {
 };
 export default function HoneymoonFund() {
   const [state, setState] = useState<ActionType>(null);
-  const router = useRouter();
   const giftUrl = "https://www.thingstogetus.com/1818031ab30ea";
 
   const actions: {
@@ -101,10 +99,29 @@ export default function HoneymoonFund() {
     {
       value: "gift",
       icon: Gift,
-      title: "Gift registry",
-      description: "Pick a gift from our registry",
+      title: "Send us a gift",
+      description:
+        "We appreciate your kindness and thoughtfulness more than words can say",
     },
   ];
+
+  const scrollToSection = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const runAction = (value: ActionType) => {
+    if (value === "gift") {
+      return window.open(giftUrl, "_blank");
+    }
+
+    setState((prev) => (prev === "cash" ? null : "cash"));
+    if (state === null) {
+      scrollToSection("#payment");
+    }
+  };
 
   return (
     <section className="py-20 bg-background">
@@ -126,9 +143,9 @@ export default function HoneymoonFund() {
             </div>
           </div>
           <p className="text-text-muted font-body text-lg max-w-3xl mx-auto">
-            Your presence at our wedding is the greatest gift of all. However,
-            if you wish to honor us with a gift, we would be grateful for a
-            contribution.
+            Your presence at our wedding is the greatest gift of all. If you
+            would like to send a little something our way, we’ve made it easier
+            with our registry options.
           </p>
         </motion.div>
 
@@ -137,11 +154,7 @@ export default function HoneymoonFund() {
           {actions.map((action, index) => (
             <motion.button
               type="button"
-              onClick={() =>
-                action.value === "cash"
-                  ? setState((prev) => (prev === "cash" ? null : "cash"))
-                  : router.push(giftUrl)
-              }
+              onClick={() => runAction(action.value)}
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -169,7 +182,9 @@ export default function HoneymoonFund() {
         </div>
 
         {/* Donation Form */}
-        {state === "cash" && <PaymentActionCard />}
+        <section id="payment" className="scroll-mt-20">
+          {state === "cash" && <PaymentActionCard />}
+        </section>
       </div>
     </section>
   );

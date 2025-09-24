@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-const ThemeToggle = () => {
+const ThemeToggle = ({ white }: { white?: boolean }) => {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -15,7 +15,11 @@ const ThemeToggle = () => {
 
   if (!mounted) {
     return (
-      <div className="border border-primary/30 rounded-full flex items-center gap-1 p-1">
+      <div
+        className={cn(
+          "border border-primary/30 rounded-full flex items-center gap-1 p-1",
+          white && " border-zinc-100/30"
+        )}>
         <div className="relative">
           <span className="bg-primary/10 rounded-full inset-0 absolute z-[-1]"></span>
 
@@ -36,7 +40,11 @@ const ThemeToggle = () => {
 
   if (mounted) {
     return (
-      <div className="border border-primary/30 rounded-full flex items-center gap-1 p-1">
+      <div
+        className={cn(
+          "border border-primary/30 rounded-full flex items-center gap-1 p-1",
+          white && " border-zinc-100/30"
+        )}>
         <div className="relative">
           {resolvedTheme === "light" && (
             <motion.span
@@ -47,13 +55,18 @@ const ThemeToggle = () => {
                 stiffness: 420,
                 damping: 30,
               }}
-              className="bg-primary/10 rounded-full inset-0 absolute z-[-1]"></motion.span>
+              className={cn(
+                "bg-primary/10 rounded-full inset-0 absolute z-[-1]",
+                white && "bg-zinc-100/10"
+              )}></motion.span>
           )}
           <button
             onClick={() => setTheme("light")}
             className={cn(
               "size-6 flex items-center justify-center aspect-square text-text-muted rounded-full cursor-pointer hover:bg-primary/10",
-              resolvedTheme === "light" && "text-primary"
+              resolvedTheme === "light" && "text-primary",
+              white && "text-zinc-100/80 hover:bg-zinc-100/10",
+              resolvedTheme === "light" && white && "text-zinc-100"
             )}>
             <Sun className="size-3" />
           </button>
@@ -68,14 +81,19 @@ const ThemeToggle = () => {
                 stiffness: 420,
                 damping: 30,
               }}
-              className="bg-primary/20 rounded-full inset-0 absolute z-[-1]"></motion.span>
+              className={cn(
+                "bg-primary/20 rounded-full inset-0 absolute z-[-1]",
+                white && "bg-zinc-100/10"
+              )}></motion.span>
           )}
 
           <button
             onClick={() => setTheme("dark")}
             className={cn(
               "size-6 flex items-center justify-center aspect-square text-text-muted rounded-full cursor-pointer hover:bg-primary/10",
-              resolvedTheme === "dark" && "text-primary"
+              resolvedTheme === "dark" && "text-primary",
+              white && "text-zinc-100/80 hover:bg-zinc-100/10",
+              resolvedTheme === "dark" && white && "text-zinc-100"
             )}>
             <Moon className="size-3" />
           </button>

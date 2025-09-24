@@ -25,7 +25,10 @@ const layout = ({ children }: { children: React.ReactNode }) => {
                   confirmed, declined, or still deciding.
                 </p>
               </div>
-              <Separator orientation="vertical" className="mx-3 !h-auto" />
+              <Separator
+                orientation="vertical"
+                className="mx-3 !h-auto bg-zinc-100 "
+              />
               <div className=" flex-1 space-y-1">
                 <h2 className="font-medium">Stay in control</h2>
                 <p className="text-sm">

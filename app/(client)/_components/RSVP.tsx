@@ -81,7 +81,10 @@ export default function RSVP() {
             </div>
           </div>
           <p className="text-text-muted font-body text-lg max-w-3xl mx-auto">
-            Please let us know if you can make it to our special day.
+            Your presence means the world to us. Please RSVP by October 22nd
+            2025, so we can celebrate together! Complete the form with your name
+            to download your access card and invitation. This will be required
+            at the venue for hassle-free entry
           </p>
         </motion.div>
 

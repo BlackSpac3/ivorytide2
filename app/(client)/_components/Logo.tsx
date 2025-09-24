@@ -5,7 +5,13 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-const Logo = ({ className }: { className?: string }) => {
+const Logo = ({
+  className,
+  white,
+}: {
+  className?: string;
+  white?: boolean;
+}) => {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -18,7 +24,9 @@ const Logo = ({ className }: { className?: string }) => {
   }
   return (
     <Image
-      src={resolvedTheme === "dark" ? logo.gold : logo.primary}
+      src={
+        white ? logo.white : resolvedTheme === "dark" ? logo.gold : logo.primary
+      }
       alt="A&E"
       className={cn("w-7 h-auto ", className)}
     />
