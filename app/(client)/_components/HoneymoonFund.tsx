@@ -68,10 +68,10 @@ const PaymentActionCard = () => {
       <div className="text-center mb-8">
         <Heart className="w-12 h-12 text-primary mx-auto mb-4" />
         <h3 className="font-serif text-3xl text-foreground mb-2">
-          Make a Contribution
+          Send Us a Gift
         </h3>
         <p className="text-text-muted font-body">
-          Every contribution helps make our dream honeymoon a reality
+          We appreciate your kindness and thoughtfulness more than words can say
         </p>
       </div>
       <CashPaymentDetails />
@@ -99,9 +99,8 @@ export default function HoneymoonFund() {
     {
       value: "gift",
       icon: Gift,
-      title: "Send us a gift",
-      description:
-        "We appreciate your kindness and thoughtfulness more than words can say",
+      title: "Gift registry",
+      description: "Pick a gift from our registry",
     },
   ];
 
@@ -143,9 +142,9 @@ export default function HoneymoonFund() {
             </div>
           </div>
           <p className="text-text-muted font-body text-lg max-w-3xl mx-auto">
-            Your presence at our wedding is the greatest gift of all. If you
-            would like to send a little something our way, we’ve made it easier
-            with our registry options.
+            Your presence at our wedding is the greatest gift of all. However,
+            if you wish to honor us with a gift, we would be grateful for a
+            contribution.
           </p>
         </motion.div>
 
