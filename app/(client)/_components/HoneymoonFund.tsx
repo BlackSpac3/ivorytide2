@@ -142,9 +142,9 @@ export default function HoneymoonFund() {
             </div>
           </div>
           <p className="text-text-muted font-body text-lg max-w-3xl mx-auto">
-            Your presence at our wedding is the greatest gift of all. However,
-            if you wish to honor us with a gift, we would be grateful for a
-            contribution.
+            Your presence at our wedding is the greatest gift of all. If you
+            would like to send a little something our way, we&apos;ve made it
+            easier with our registry options.
           </p>
         </motion.div>
 
