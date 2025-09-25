@@ -6,16 +6,16 @@ import Hero2 from "./_components/hero2";
 export default function Home() {
   return (
     <div className="font-sans smooth-scroll">
-      <section id="home" className="scroll-mt-10">
+      <section id="home" className="scroll-mt-[82px]">
         <Hero2 />
       </section>
-      <section id="fund" className="scroll-mt-10">
+      <section id="fund" className="scroll-mt-[82px]">
         <HoneymoonFund />
       </section>
-      <section id="rsvp" className="scroll-mt-10">
+      <section id="rsvp" className="scroll-mt-[82px]">
         <RSVP />
       </section>
-      <section id="gallery" className="scroll-mt-10">
+      <section id="gallery" className="scroll-mt-[82px]">
         <Gallery />
       </section>
     </div>

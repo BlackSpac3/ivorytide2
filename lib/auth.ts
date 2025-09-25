@@ -56,8 +56,6 @@ export const authOptions: NextAuthOptions = {
         if (!isPasswordValid) {
           return null;
         }
-        console.log(user);
-
         return {
           id: user.id,
           email: user.email,
