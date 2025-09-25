@@ -41,12 +41,15 @@ export default function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={cn(
-        "fixed top-0 h-[92px] flex items-center left-0 right-0 z-50 px-10 bg-transparent border-b border-b-transparent transition-colors",
+        "fixed top-0 min-h-[92px] flex items-center left-0 right-0 z-50 px-10 bg-transparent border-b border-b-transparent transition-colors",
         scrolled && "bg-background border-b-primary/10  ",
         isOpen && "bg-background border-b-primary/10 "
       )}>
       <div
-        className={cn("container mx-auto  transition-all", isOpen && "pb-0")}>
+        className={cn(
+          "container mx-auto py-6  transition-all",
+          isOpen && " pb-0"
+        )}>
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">

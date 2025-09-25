@@ -37,6 +37,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-body);
   line-height: 1.6;
+  overflow: overlay;
 }
 
 .font-serif {
@@ -66,4 +67,9 @@ body {
   /* @apply border-border outline-ring/50; */
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
 }
