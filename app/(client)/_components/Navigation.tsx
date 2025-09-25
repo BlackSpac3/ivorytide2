@@ -12,9 +12,11 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const handleScroll = () => {
       setScrolled(window.scrollY > window.innerHeight - 92);
     };
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
