@@ -26,3 +26,10 @@ export type IPagination = {
   total_count: number;
   total_pages: number;
 };
+
+export type IOverview = {
+  guests: number;
+  invited: number;
+  confirmed: number;
+  declined: number;
+};

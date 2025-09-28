@@ -123,15 +123,27 @@ export async function GET(request: NextRequest) {
     await connectToDatabase();
 
     const { searchParams } = new URL(request.url);
+    const qParam = searchParams.get("q");
     const page = parseInt(searchParams.get("page") || "1");
     const pageSize = parseInt(searchParams.get("pageSize") || "10");
     const statuses = searchParams.getAll("status");
     const skip = (page - 1) * pageSize;
 
-    const filter: { status?: { $in: string[] } } = {};
+    const filter: {
+      status?: { $in: string[] };
+      $or?: { [key: string]: { $regex: string; $options: string } }[];
+    } = {};
 
     if (statuses.length > 0) {
       filter.status = { $in: statuses };
+    }
+
+    if (qParam) {
+      filter.$or = [
+        { first_name: { $regex: qParam, $options: "i" } },
+        { last_name: { $regex: qParam, $options: "i" } },
+        { title: { $regex: qParam, $options: "i" } },
+      ];
     }
 
     const guests = await Guest.find(filter)

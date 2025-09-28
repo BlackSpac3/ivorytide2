@@ -12,10 +12,12 @@ import { toast } from "sonner";
 import { IGuest } from "../models/guest.model";
 
 const fetchGuests = async ({
+  qParam,
   page,
   pageSize,
   statuses,
 }: {
+  qParam?: string;
   page: number;
   pageSize: number;
   statuses: string[];
@@ -27,7 +29,9 @@ const fetchGuests = async ({
   });
 
   const queryString = params.toString();
-  const url = `/api/guests?page=${page}&pageSize=${pageSize}&${queryString}`;
+  const url = `/api/guests?q=${
+    qParam ?? ""
+  }&page=${page}&pageSize=${pageSize}&${queryString}`;
 
   const response = await axios.get<
     ApiResponseData<{ guests: IGuest[]; pagination: IPagination }>
@@ -36,17 +40,19 @@ const fetchGuests = async ({
 };
 
 export const useFetchGuests = ({
+  qParam,
   page,
   pageSize,
   statuses,
 }: {
+  qParam?: string;
   page: number;
   pageSize: number;
   statuses: string[];
 }) => {
   return useQuery({
-    queryKey: ["guests", page, pageSize, statuses],
-    queryFn: () => fetchGuests({ page, pageSize, statuses }),
+    queryKey: ["guests", page, pageSize, qParam, statuses],
+    queryFn: () => fetchGuests({ page, pageSize, qParam, statuses }),
   });
 };
 

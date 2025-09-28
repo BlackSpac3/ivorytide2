@@ -39,7 +39,7 @@ const GuestsPage = () => {
 
   // Read values from URL (URL is the source of truth)
   const qParam = searchParams.get("q") ?? ""; // null means "All"
-  const statusesParam = searchParams.getAll("status") ?? [];
+  const statusesParam = searchParams.getAll("status");
   const pageParam = Number(searchParams.get("page") ?? "1");
   const pageSizeParam = Number(searchParams.get("page_size") ?? "10");
 
@@ -111,6 +111,7 @@ const GuestsPage = () => {
   }, [searchInput, setParams, qParam]);
 
   const { data, isPending } = useFetchGuests({
+    qParam,
     page: pageParam,
     pageSize: pageSizeParam,
     statuses: statusesParam,

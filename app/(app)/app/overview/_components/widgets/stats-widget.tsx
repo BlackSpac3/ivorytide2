@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import StatusIndicator from "../../../guests/_components/status-indicator";
@@ -6,12 +7,11 @@ import { Progress } from "@/components/ui/progress";
 import Widget from "../widget";
 import GuestDialog from "../../../_components/guest-dialog";
 import { GuestFormDefault } from "@/schemas/guest.schema";
-import { Stats } from "../../_page/OverviewPage";
+import { IOverview } from "@/lib/types/api.types";
 
 interface Props {
-  stats: Stats;
+  stats: IOverview;
 }
-
 const StatsWidget: React.FC<Props> = ({ stats }) => {
   return (
     <Widget title="Stats">
@@ -48,7 +48,7 @@ const StatsWidget: React.FC<Props> = ({ stats }) => {
               Confirmed
             </span>
             <Progress
-              value={(stats.confirmed / stats.guests) * 100}
+              value={(stats.confirmed / stats?.guests) * 100}
               className="  [&>div]:rounded-full"
             />
             <div className="w-full text-xs justify-between flex text-muted-foreground">
@@ -63,7 +63,7 @@ const StatsWidget: React.FC<Props> = ({ stats }) => {
               Declined
             </span>
             <Progress
-              value={(stats.declined / stats.guests) * 100}
+              value={(stats?.declined / stats?.guests) * 100}
               className="  [&>div]:rounded-full"
             />
             <div className="w-full text-xs justify-between flex text-muted-foreground">

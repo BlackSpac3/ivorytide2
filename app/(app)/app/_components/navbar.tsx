@@ -54,10 +54,14 @@ export default function Navbar() {
         <div className="absolute top-0 left-6">
           <div
             className={cn(
-              "h-16 flex items-center justify-center transition-all duration-300",
-              offset > 0 && "h-12"
+              "h-[50px] flex items-center  translate-y-2 transition-all duration-[400ms]",
+              offset > 0 && "h-12   translate-y-0"
             )}>
-            <div className="w-8 size-8 bg-primary/10 rounded-md flex items-center justify-center">
+            <div
+              className={cn(
+                "w-8 size-8  bg-primary/10 mb-0.5 rounded-md flex items-center justify-center  transition-all duration-[400ms]",
+                offset > 0 && "mb-0"
+              )}>
               <Command className="w-4 stroke-primary" />
             </div>
           </div>
@@ -66,8 +70,10 @@ export default function Navbar() {
         {/* Top bar */}
         <div
           className={cn(
-            "flex  w-full items-center transition-all duration-300",
-            offset > 0 ? "h-0 overflow-hidden opacity-0 " : "h-16 opacity-100"
+            "flex  w-full items-end transition-all duration-[400ms]",
+            offset > 0
+              ? "h-0 overflow-hidden opacity-0 "
+              : "h-[50px] opacity-100"
           )}>
           <div className="flex items-center justify-end sm:justify-between px-6 w-full ">
             <div className=" hidden sm:flex items-center gap-3 pl-12">
@@ -83,21 +89,24 @@ export default function Navbar() {
             </div>
 
             <div className="flex items-center gap-4">
-              <Button
-                type="button"
-                onClick={() => toast.warning("Comming soon")}
-                variant="outline">
-                Feedback
-              </Button>
-              <div className="relative">
-                <div className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full" />
+              <div className="flex items-center gap-2">
                 <Button
                   type="button"
+                  size="sm"
                   onClick={() => toast.warning("Comming soon")}
-                  variant="outline"
-                  size="icon">
-                  <Bell />
+                  variant="outline">
+                  Feedback
                 </Button>
+                <div className="relative">
+                  <div className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full" />
+                  <Button
+                    type="button"
+                    onClick={() => toast.warning("Comming soon")}
+                    variant="outline"
+                    size="sm">
+                    <Bell />
+                  </Button>
+                </div>
               </div>
 
               <NavUser />
@@ -111,7 +120,7 @@ export default function Navbar() {
 
           <ul
             className={cn(
-              "flex text-sm transition-all duration-300",
+              "flex text-sm transition-all duration-[400ms]",
               offset > 0 ? "translate-x-11" : "translate-x-0"
             )}>
             {navlinks.map((link) => (
